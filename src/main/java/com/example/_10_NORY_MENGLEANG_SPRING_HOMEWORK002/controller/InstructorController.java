@@ -57,7 +57,7 @@ public class InstructorController {
 
     @PutMapping("/{student-id}")
     public ResponseEntity<ApiResponse<Instructors>> updateInstructor(@PathVariable("student-id") Integer studentId, @RequestBody InstructorRequest instructorRequest) {
-        Instructors instructor = instructorService.updateInstructorById(studentId,instructorRequest);
+        Instructors instructor = instructorService.updateInstructorById(studentId, instructorRequest);
         ApiResponse<Instructors> response = ApiResponse.<Instructors>builder()
                 .message("The instructor has been successfully updated.")
                 .status(HttpStatus.OK)
